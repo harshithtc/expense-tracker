@@ -1,10 +1,9 @@
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
-import os
 
-# Database URL - will be loaded from environment
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://user:password@localhost:5432/expense_tracker")
+# ✅ Correct Postgres connection string
+DATABASE_URL = "postgresql://harsh:yourpassword@localhost:5432/expensedb"
 
 # Create SQLAlchemy engine
 engine = create_engine(DATABASE_URL)

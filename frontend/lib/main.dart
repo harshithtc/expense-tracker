@@ -15,9 +15,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return ChangeNotifierProvider(
       create: (context) => AuthProvider()..checkAuthStatus(),
+      
       child: Consumer<AuthProvider>(
+      
         builder: (context, authProvider, child) {
           final router = GoRouter(
             initialLocation: authProvider.isAuthenticated ? '/home' : '/login',

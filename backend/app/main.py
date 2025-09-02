@@ -5,8 +5,9 @@ from sqlalchemy.orm import Session
 from datetime import timedelta
 from typing import List
 
-from .backend.app import crud, models, schemas, auth
-from .app.database import SessionLocal, engine, get_db
+from backend.app import crud, models, schemas, auth
+from backend.app.database import SessionLocal, engine, get_db
+
 
 # Create tables
 models.Base.metadata.create_all(bind=engine)
